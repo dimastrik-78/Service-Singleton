@@ -359,6 +359,7 @@
 "Assets/_Source/Resource/RadioactiveResourcesType.cs"
 "Assets/_Source/ResourceControleButton.cs"
 "Assets/_Source/SingletonIcon.cs"
+"Assets/_Source/SingletonTimerEnrichmentAndDecay.cs"
 "Assets/_Source/UITimer.cs"
 -langversion:9.0
 

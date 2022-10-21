@@ -10,6 +10,20 @@ public class Bootstrapper : MonoBehaviour
         game = new Game();
         game.StartGame();
     }
+    private static SingletonIcon instance;
+
+    public static SingletonIcon Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = new SingletonIcon();
+            }
+
+            return instance;
+        }
+    }
 
     void Update()
     {

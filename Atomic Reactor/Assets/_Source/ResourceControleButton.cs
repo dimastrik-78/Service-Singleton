@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Resources;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ResourceControleButton : MonoBehaviour
 {
@@ -17,6 +18,6 @@ public class ResourceControleButton : MonoBehaviour
     public void Test()
     {
         // Debug.Log(radioactiveResourcesData);
-        new SingletonIcon().EnabledResource(radioactiveResourcesData);
+        new SingletonIcon().EnabledResource(radioactiveResourcesData, gameObject.GetComponent<Image>());
     }
 }

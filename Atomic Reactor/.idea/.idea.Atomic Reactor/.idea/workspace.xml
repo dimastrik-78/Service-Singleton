@@ -10,6 +10,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/_Source/EnrichmentAndDecayTimes.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Source/ResourceControleButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Source/SingletonTimerEnrichmentAndDecay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Source/UITimer.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -72,6 +73,7 @@
       <workItem from="1666257082293" duration="11364000" />
       <workItem from="1666288778327" duration="3881000" />
       <workItem from="1666332159785" duration="5303000" />
+      <workItem from="1666339596735" duration="3231000" />
     </task>
     <servers />
   </component>
