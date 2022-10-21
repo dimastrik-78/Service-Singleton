@@ -5,20 +5,14 @@ using UnityEngine;
 
 public class Game
 {
-    private bool _goTimer;
-    public float GameTime;
+    public bool GameWork;
     public void StartGame()
     {
-        _goTimer = true;
-    }
-
-    public void GameTimer()
-    {
-        if (_goTimer) GameTime += Time.deltaTime;
+        GameWork = true;
     }
 
     public void EndGame()
     {
-        _goTimer = false;
+        GameWork = false;
     }
 }

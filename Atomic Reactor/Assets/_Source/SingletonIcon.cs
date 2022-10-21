@@ -1,52 +1,50 @@
 using System.Collections;
 using System.Collections.Generic;
-using Resources;
+using ResourcesSystem;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SingletonIcon
 {
-    // public RadioactiveResourcesData radioactiveResource = new RadioactiveResourcesData();
+    private static SingletonIcon instance;
+
+    public static SingletonIcon Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = new SingletonIcon();
+            }
+            return instance;
+        }
+    }
     
-    private Object[] items;
     private RadioactiveResource _resource;
 
     public void EnabledResource(RadioactiveResourcesType resourcesType, Image icon)
     {
-        // radioactiveResource
-        // items = UnityEngine.Resources.LoadAll(@"Assets\_Presention\Resources\", typeof(RadioactiveResource)); //RadioactiveResources RadioactiveResource
-        // items = UnityEngine.Resources.FindObjectsOfTypeAll(typeof(RadioactiveResource));
-        // Debug.Log(items.Length);
-        // radioactiveResource.ResourcesType = resourcesType;
-        // Debug.Log(radioactiveResource.EnabledIcon);
+        _resource = Resources.Load("RadioactiveResources") as RadioactiveResource;
 
-        GettingResource();
-
-        for (int i = 0; i < _resource.radioactiveResource.Count; i++)
+        for (int i = 0; i < _resource.RadioactiveResourceList.Count; i++)
         {
-            if (_resource.radioactiveResource[i].ResourcesType == resourcesType)
+            if (_resource.RadioactiveResourceList[i].ResourcesType == resourcesType)
             {
-                icon.sprite = _resource.radioactiveResource[i].EnabledIcon;
+                icon.sprite = _resource.RadioactiveResourceList[i].EnabledIcon;
             }
         }
     }
 
     public void DisabledResource(RadioactiveResourcesType resourcesType, Image icon)
     {
-        GettingResource();
+        _resource = Resources.Load("RadioactiveResources") as RadioactiveResource;
 
-        for (int i = 0; i < _resource.radioactiveResource.Count; i++)
+        for (int i = 0; i < _resource.RadioactiveResourceList.Count; i++)
         {
-            if (_resource.radioactiveResource[i].ResourcesType == resourcesType)
+            if (_resource.RadioactiveResourceList[i].ResourcesType == resourcesType)
             {
-                icon.sprite = _resource.radioactiveResource[i].DisabledIcon;
+                icon.sprite = _resource.RadioactiveResourceList[i].DisabledIcon;
             }
         }
-    }
-
-    private void GettingResource()
-    {
-        items = UnityEngine.Resources.LoadAll("RadRes", typeof(RadioactiveResource));
-        _resource = (RadioactiveResource)items[0];
     }
 }

@@ -1,17 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
+using ResourcesSystem;
 using UnityEngine;
 
 public class SingletonTimerEnrichmentAndDecay
 {
-    private Object[] items;
-    private EnrichmentAndDecayTimes _resource;
-    
-    
-    
-    private void GettingResource()
+    private static SingletonTimerEnrichmentAndDecay instance;
+    public static SingletonTimerEnrichmentAndDecay Instance
     {
-        items = UnityEngine.Resources.LoadAll("RadRes", typeof(EnrichmentAndDecayTimes));
-        _resource = (EnrichmentAndDecayTimes)items[0];
+        get
+        {
+            if (instance == null)
+            {
+                instance = new SingletonTimerEnrichmentAndDecay();
+            }
+            return instance;
+        }
+    }
+    
+    private EnrichmentAndDecayTimes items;
+    private EnrichmentAndDecayTimes _resource;
+    public void TimerOutput(RadioactiveResourcesType resourcesType)
+    {
+        items = Resources.Load("EnrichmentAndDecayTimes") as EnrichmentAndDecayTimes;
+        
+        
     }
 }

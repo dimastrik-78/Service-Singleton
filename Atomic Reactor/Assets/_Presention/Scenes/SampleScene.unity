@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -724,7 +724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b5189db3420ce446bbfa06efaaab65e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radioactiveResourcesData: 0
+  ResourcesType: 0
 --- !u!1 &1027621428
 GameObject:
   m_ObjectHideFlags: 0
@@ -1288,9 +1288,9 @@ GameObject:
   - component: {fileID: 2140649964}
   - component: {fileID: 2140649963}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Bostrapper
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1306,6 +1306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff496e6e77209d4cad2e4a004af2c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UITimer: {fileID: 774821862}
 --- !u!4 &2140649964
 Transform:
   m_ObjectHideFlags: 0
@@ -1314,7 +1315,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2140649962}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5607016, y: 8.407098, z: 90.24657}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
