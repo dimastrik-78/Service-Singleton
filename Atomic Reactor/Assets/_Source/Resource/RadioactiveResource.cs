@@ -8,7 +8,8 @@ namespace Resources
     [CreateAssetMenu(fileName = "NewRadioactiveResources", menuName = "SO/New Radioactive Resources Data")]
     public class RadioactiveResource : ScriptableObject
     {
-        [SerializeField] private List<RadioactiveResourcesData> radioactiveResource;
+        // [SerializeField] private List<RadioactiveResourcesData> radioactiveResource;
+        public List<RadioactiveResourcesData> radioactiveResource;
     }
     
     [Serializable]

@@ -6,12 +6,10 @@ using UnityEngine;
 public class ResourceControleButton : MonoBehaviour
 {
     public RadioactiveResourcesType radioactiveResourcesData;
-    void Start()
-    {
-        
-    }
 
-    void Update()
+    // public RadioactiveResource Res;
+    // public RadioactiveResource radioactiveResourcesData;
+    void Start()
     {
         
     }
