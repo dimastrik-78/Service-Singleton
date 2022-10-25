@@ -6,17 +6,17 @@ using UnityEngine.UI;
 
 public class SingletonIcon
 {
-    private static SingletonIcon instance;
+    private static SingletonIcon _instance;
 
     public static SingletonIcon Instance
     {
         get
         {
-            if (instance == null)
+            if (_instance == null)
             {
-                instance = new SingletonIcon();
+                _instance = new SingletonIcon();
             }
-            return instance;
+            return _instance;
         }
     }
     

@@ -5,25 +5,32 @@ using UnityEngine;
 
 public class SingletonTimerEnrichmentAndDecay
 {
-    private static SingletonTimerEnrichmentAndDecay instance;
+    private static SingletonTimerEnrichmentAndDecay _instance;
     public static SingletonTimerEnrichmentAndDecay Instance
     {
         get
         {
-            if (instance == null)
+            if (_instance == null)
             {
-                instance = new SingletonTimerEnrichmentAndDecay();
+                _instance = new SingletonTimerEnrichmentAndDecay();
             }
-            return instance;
+            return _instance;
         }
     }
     
-    private EnrichmentAndDecayTimes items;
-    private EnrichmentAndDecayTimes _resource;
-    public void TimerOutput(RadioactiveResourcesType resourcesType)
+    private EnrichmentAndDecayTimes _resourceTime;
+    
+    public void TimerOutput(RadioactiveResourcesType resourcesType, ref float enrichmentTime, ref float decayTime)
     {
-        items = Resources.Load("EnrichmentAndDecayTimes") as EnrichmentAndDecayTimes;
+        _resourceTime = Resources.Load("EnrichmentAndDecayTimes") as EnrichmentAndDecayTimes;
         
-        
+        for (int i = 0; i < _resourceTime.EnrichmentAndDecayTimeList.Count; i++)
+        {
+            if (_resourceTime.EnrichmentAndDecayTimeList[i].ResourcesType == resourcesType)
+            {
+                enrichmentTime = _resourceTime.EnrichmentAndDecayTimeList[i].EnrichmentTime;
+                decayTime = _resourceTime.EnrichmentAndDecayTimeList[i].DecayTime;
+            }
+        }
     }
 }

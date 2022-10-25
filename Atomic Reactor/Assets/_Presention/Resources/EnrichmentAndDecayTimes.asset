@@ -17,5 +17,11 @@ MonoBehaviour:
     enrichmentTime: 2
     decayTime: 5
   - resourcesType: 1
+    enrichmentTime: 4
+    decayTime: 6
+  - resourcesType: 2
+    enrichmentTime: 3
+    decayTime: 8
+  - resourcesType: 3
     enrichmentTime: 5
-    decayTime: 3
+    decayTime: 4

@@ -6,16 +6,12 @@ using UnityEngine.UI;
 
 public class UITimer : MonoBehaviour
 {
-    public Bootstrapper Bootstrapper;
     public Text Timer;
 
-    private float GameTime;
-    void Update()
+    private float _gameTime;
+    public void GameTimer()
     {
-        Timer.text = Math.Truncate(GameTime).ToString();
-    }
-    public void GameTimer(bool gameWork)
-    {
-        if (gameWork) GameTime += Time.deltaTime;
+        _gameTime += Time.deltaTime;
+        Timer.text = Math.Truncate(_gameTime).ToString();
     }
 }

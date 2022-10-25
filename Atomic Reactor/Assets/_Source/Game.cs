@@ -11,8 +11,10 @@ public class Game
         GameWork = true;
     }
 
-    public void EndGame()
+    public void EndGame(GameObject losePanel)
     {
         GameWork = false;
+        
+        losePanel.SetActive(true);
     }
 }

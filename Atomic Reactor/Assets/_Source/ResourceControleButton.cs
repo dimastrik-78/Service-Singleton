@@ -9,26 +9,69 @@ public class ResourceControleButton : MonoBehaviour
 {
     public RadioactiveResourcesType ResourcesType;
 
-    private EnrichmentAndDecayTimes _resourceTime;
-    private static float enrichmentTime;
-    private static float decayTime;
+    public bool DecayTimerZero;
 
-    public void Awake()
+    private EnrichmentAndDecayTimes _resourceTime;
+    
+    private float _enrichmentTime;
+    private float _decayTime;
+
+    private bool _enrichment;
+    private bool _end;
+    private void Start()
     {
-        _resourceTime = Resources.Load("EnrichmentAndDecayTimes") as EnrichmentAndDecayTimes;
-        
-        for (int i = 0; i < _resourceTime.EnrichmentAndDecayTimeList.Count; i++)
-        {
-            if (_resourceTime.EnrichmentAndDecayTimeList[i].ResourcesType == ResourcesType)
-            {
-                enrichmentTime = _resourceTime.EnrichmentAndDecayTimeList[i].EnrichmentTime;
-                decayTime = _resourceTime.EnrichmentAndDecayTimeList[i].DecayTime;
-            }
-        }
+        ActiveResource();
     }
 
-    public void Test()
+    private void Update()
     {
+        if (!_enrichment && !DecayTimerZero)
+            DecayTimer();
+        else if (!DecayTimerZero)
+            EnrichmentTimer();
+        
+        // попытка реализовать таймер для задания на *
+        // if (!_enrichment)
+        //     SingletonTimers.Instance.DecayTimer(_decayTime, ref DecayTimerZero);
+        // else
+        // {
+        //     SingletonTimers.Instance.EnrichmentTime(_enrichmentTime, ref _enrichment);
+        //     if (!_enrichment)
+        //         ActiveResource();
+        // }
+    }
+
+    private void ActiveResource()
+    {
+        _enrichment = false;
+        
+        gameObject.GetComponent<Button>().interactable = true;
+        
         SingletonIcon.Instance.EnabledResource(ResourcesType, gameObject.GetComponent<Image>());
+        
+        SingletonTimerEnrichmentAndDecay.Instance.TimerOutput(ResourcesType, ref _enrichmentTime, ref _decayTime);
+    }
+    
+    private void DecayTimer()
+    {
+        _decayTime -= Time.deltaTime;
+        if (_decayTime <= 0)
+            DecayTimerZero = true;
+    }
+    
+    private void EnrichmentTimer()
+    {
+        _enrichmentTime -= Time.deltaTime;
+        if (_enrichmentTime <= 0)
+            ActiveResource();
+    }
+
+    public void StartEnrichment()
+    {
+        _enrichment = true;
+        
+        SingletonIcon.Instance.DisabledResource(ResourcesType, gameObject.GetComponent<Image>());
+        
+        gameObject.GetComponent<Button>().interactable = false;
     }
 }

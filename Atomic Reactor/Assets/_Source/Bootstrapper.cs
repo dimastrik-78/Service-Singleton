@@ -5,16 +5,27 @@ using UnityEngine;
 public class Bootstrapper : MonoBehaviour
 {
     public UITimer UITimer;
+    public ResourceControleButton[] Controle;
+    public GameObject LosePanel;
     
-    private Game game;
+    private Game _game;
     void Start()
     {
-        game = new Game();
-        game.StartGame();
+        _game = new Game();
+        _game.StartGame();
     }
 
     void Update()
     {
-        UITimer.GameTimer(game.GameWork);
+        if (_game.GameWork)
+            UITimer.GameTimer();
+
+        for (int i = 0; i < Controle.Length; i++)
+        {
+            if (Controle[i].DecayTimerZero)
+            {
+                _game.EndGame(LosePanel);
+            }
+        }
     }
 }

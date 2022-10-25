@@ -14,8 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radioactiveResourceList:
   - resourcesType: 0
-    enabledIcon: {fileID: 21300000, guid: 5d01b7f85aa87e246b93548ca9dc9c38, type: 3}
-    disabledIcon: {fileID: 21300000, guid: 9646fe82ab0f1cc4182e50b7b9db6dfe, type: 3}
+    enabledIcon: {fileID: 21300000, guid: 7ade7e7336db6af4d86e9e5a8ab49743, type: 3}
+    disabledIcon: {fileID: 21300000, guid: 7ade7e7336db6af4d86e9e5a8ab49743, type: 3}
   - resourcesType: 1
-    enabledIcon: {fileID: 0}
-    disabledIcon: {fileID: 0}
+    enabledIcon: {fileID: 21300000, guid: 971ae81ea257cc7409cb35565de8b122, type: 3}
+    disabledIcon: {fileID: 21300000, guid: 971ae81ea257cc7409cb35565de8b122, type: 3}
+  - resourcesType: 2
+    enabledIcon: {fileID: 21300000, guid: 6d518c5587f254044aba504f75b34684, type: 3}
+    disabledIcon: {fileID: 21300000, guid: 6d518c5587f254044aba504f75b34684, type: 3}
+  - resourcesType: 3
+    enabledIcon: {fileID: 21300000, guid: faa2c6a792f3fe0408a76a9e751282d1, type: 3}
+    disabledIcon: {fileID: 21300000, guid: faa2c6a792f3fe0408a76a9e751282d1, type: 3}
